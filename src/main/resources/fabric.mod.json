@@ -16,10 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.drypted.highlight_em_all.Highlight_em_all"
+			"com.drypted.highlight_em_all.HighlightEmAll"
 		],
 		"client": [
-			"com.drypted.highlight_em_all.client.Highlight_em_allClient"
+			"com.drypted.highlight_em_all.client.HighlightEmAllClient"
 		]
 	},
 	"mixins": [
