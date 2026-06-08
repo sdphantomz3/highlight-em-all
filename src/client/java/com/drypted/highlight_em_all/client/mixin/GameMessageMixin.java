@@ -16,20 +16,20 @@ public class GameMessageMixin {
     @Inject(method = "setOverlayMessage", at = @At("HEAD"))
     private void onSetOverlayMessage(Component component, boolean animate, CallbackInfo ci) {
         // DEBUG LOG: This will absolutely trigger for every single action bar pop-up
-        HighlightEmAllClient.LOGGER.info("[HighlightEmAll] Intercepted Action Bar text: '{}'", component.getString());
+        // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] Intercepted Action Bar text: '{}'", component.getString());
 
         if (component.getContents() instanceof TranslatableContents translatable) {
-            HighlightEmAllClient.LOGGER.info("[HighlightEmAll] Translation Key found: '{}'", translatable.getKey());
+            // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] Translation Key found: '{}'", translatable.getKey());
             
             if ("block.minecraft.bed.not_safe".equals(translatable.getKey())) {
-                HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> MATCH! Bed warning found. Setting ticks to 60.");
+                // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> MATCH! Bed warning found. Setting ticks to 60.");
                 HighlightEmAllClient.remainingGlowTicks = 60;
             }
         } else {
             // FALLBACK: In case a server or plugin stripped the translation key and sent raw text
             String rawText = component.getString().toLowerCase();
             if (rawText.contains("monsters nearby") || rawText.contains("not safe")) {
-                HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> RAW TEXT MATCH! Setting ticks to 60.");
+                // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> RAW TEXT MATCH! Setting ticks to 60.");
                 HighlightEmAllClient.remainingGlowTicks = 60;
             }
         }

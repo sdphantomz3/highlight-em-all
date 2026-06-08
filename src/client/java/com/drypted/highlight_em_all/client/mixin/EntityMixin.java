@@ -30,15 +30,15 @@ public class EntityMixin {
                     double deltaY = Math.abs(dy);
 
                     // DEBUG: Log telemetry for every loaded monster evaluated in the scene frame
-                    HighlightEmAllClient.LOGGER.info("[HighlightEmAll] Evaluating Monster: '{}' | DistSq: {} | DeltaY: {}", 
-                        monster.getType().getDescription().getString(), distSq, deltaY);
+                    // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] Evaluating Monster: '{}' | DistSq: {} | DeltaY: {}", 
+                    //     monster.getType().getDescription().getString(), distSq, deltaY);
 
                     // Bounding validation rule check
                     if (distSq <= 64.0 && deltaY <= 5.0) {
-                        HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> SUCCESS! Forcing glow outline for: {}", monster.getType().getDescription().getString());
+                        // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> SUCCESS! Forcing glow outline for: {}", monster.getType().getDescription().getString());
                         cir.setReturnValue(true);
                     } else {
-                        HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> Fail: Monster out of radar limits.");
+                        // HighlightEmAllClient.LOGGER.info("[HighlightEmAll] -> Fail: Monster out of radar limits.");
                     }
                 }
             }

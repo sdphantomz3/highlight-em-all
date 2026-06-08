@@ -18,16 +18,16 @@ public class HighlightEmAllClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        LOGGER.info("[HighlightEmAll] Client Initializer registered successfully!");
+        LOGGER.info("[HighlightEmAll] successfully initialized!");
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if (remainingGlowTicks > 0) {
-                remainingGlowTicks--;
-                // DEBUG: Log the status every 10 ticks (0.5 seconds) to avoid spamming too heavily
-                if (remainingGlowTicks % 10 == 0) {
-                    LOGGER.info("[HighlightEmAll] Timer Ticking. Remaining ticks: {}", remainingGlowTicks);
-                }
-            }
-        });
+        // ClientTickEvents.END_CLIENT_TICK.register(client -> {
+        //     if (remainingGlowTicks > 0) {
+        //         remainingGlowTicks--;
+        //         // DEBUG: Log the status every 10 ticks (0.5 seconds) to avoid spamming too heavily
+        //         if (remainingGlowTicks % 10 == 0) {
+        //             LOGGER.info("[HighlightEmAll] Timer Ticking. Remaining ticks: {}", remainingGlowTicks);
+        //         }
+        //     }
+        // });
     }
 }
